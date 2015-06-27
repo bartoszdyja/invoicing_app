@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'auth_controller#index'
+  get 'auth/:provider/callback', to: 'auth_controller#create'
 
   resources :invoices, defaults: { format: 'json' }
 
